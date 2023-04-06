@@ -1,8 +1,14 @@
+import Blogs from "./components/Blogs";
 
-export default function Home() {
+
+const Home = () => {
   return (
-    <main>
-      
+    <main className=" flex items-center justify-center">
+      <Blogs/>
     </main>
   )
 }
+export default Home;
+
+
+
