@@ -1,11 +1,20 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
+import { Inter as FontSans } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+import '@/styles/globals.css'
+import { cn } from '@/lib/utils'
+import { siteConfig } from '@/config/siteConfig'
+
+const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-inter",
+})
 
 export const metadata = {
-  title: 'Dev Blog',
-  description: 'Dev Blog is a personal blog.',
+  title: {
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
 }
 
 export default function RootLayout({
@@ -14,8 +23,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en"
+      className={cn(
+        "bg-white font-sans text-slate-900 antialiased",
+        fontSans.variable
+      )}
+    >
+      <body className="min-h-screen">
         {children}
       </body>
     </html>
