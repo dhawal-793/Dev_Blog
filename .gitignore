@@ -26,10 +26,14 @@ yarn-error.log*
 
 # local env files
 .env*.local
-
+.env
 # vercel
 .vercel
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+
+# Contentlayer
+.contentlayer
